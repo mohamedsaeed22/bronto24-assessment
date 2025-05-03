@@ -37,19 +37,19 @@ export default function UserCard({ user, onEdit, onDelete }: UserCardProps) {
       </div>
 
       {/* Bottom Content */}
-      <div className="absolute bottom-2 w-full p-4 bg-gradient-to-t from-black/70 to-transparent text-white z-10 font-thin">
-        <span className="inline-block bg-[#FFFAFA] text-[10px] px-3 py-1 rounded-full mb-2 text-black">
+      <div className="absolute bottom-2 w-full p-5 bg-gradient-to-t from-black/70 to-transparent text-white z-10 font-normal">
+        <span className="inline-block bg-[#FFFAFA] text-xs px-4 py-1.5 rounded-full mb-3 text-black">
           {user.job_title}
         </span>
-        <div className="text-sm font-bold mb-2 max-w-70">{user.name}</div>
-        <div className="flex flex-row gap-4 text-xs">
-          <div className="flex items-center space-x-1">
-            <div className="relative w-4 h-4 rounded-full overflow-hidden">
+        <div className="text-base font-bold mb-2 max-w-70">{user.name}</div>
+        <div className="flex flex-row gap-5 text-sm">
+          <div className="flex items-center space-x-1.5">
+            <div className="relative w-5 h-5 rounded-full overflow-hidden">
               <Image
                 src="/imgs/user-img.jpg"
                 alt="Author"
                 fill
-                sizes="16px"
+                sizes="20px"
                 className="object-cover"
                 priority
               />
@@ -57,17 +57,17 @@ export default function UserCard({ user, onEdit, onDelete }: UserCardProps) {
             <span>{user.user_name}</span>
           </div>
 
-          <div className="flex items-center space-x-1">
-            <CalendarTick color="white" size={16} variant="Bold" />
+          <div className="flex items-center space-x-1.5">
+            <CalendarTick color="white" size={18} variant="Bold" />
             <span>
               {new Date(user?.created_at || "")
                 .toLocaleDateString("en-GB")
-                .replace(/\//g, ".")}{" "}
+                .replace(/\//g, ".")}
             </span>
           </div>
 
-          <div className="flex items-center space-x-1">
-            <Clock color="white" size={16} variant="Bold" />
+          <div className="flex items-center space-x-1.5">
+            <Clock color="white" size={18} variant="Bold" />
             <span>{user.age}</span>
           </div>
         </div>
